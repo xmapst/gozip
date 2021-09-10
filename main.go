@@ -71,7 +71,7 @@ func makeZip(inFilepath string, zw *zip.Writer) error {
 		}
 		// 目录拉平
 		//relPath := strings.TrimPrefix(filePath, filepath.Dir(inFilepath))
-        var zwPath = utils.ToLinuxPath(filePath)
+		var zwPath = utils.ToLinuxPath(filePath)
 		// 去除路径以根开始, 解决7z及windows资源管理器打开为空问题
 		zipFile, err := zw.Create(strings.TrimPrefix(zwPath, "/"))
 		zipFile, err := zw.Create(zwPath)
@@ -82,7 +82,7 @@ func makeZip(inFilepath string, zw *zip.Writer) error {
 		if err != nil {
 			return err
 		}
-        defer fsFile.Close()
+		defer fsFile.Close()
 		_, err = io.Copy(zipFile, fsFile)
 		if err != nil {
 			return err
