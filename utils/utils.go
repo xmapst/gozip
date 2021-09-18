@@ -3,6 +3,8 @@ package utils
 import (
 	"github.com/shirou/gopsutil/v3/process"
 	"os"
+	"runtime"
+	"strings"
 )
 
 func FileOrPathExist(filename string) bool {
