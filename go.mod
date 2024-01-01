@@ -2,7 +2,7 @@ module github.com/xmapst/gozip
 
 go 1.17
 
-require github.com/shirou/gopsutil/v3 v3.23.11
+require github.com/shirou/gopsutil/v3 v3.23.12
 
 require (
 	github.com/go-ole/go-ole v1.2.6 // indirect
